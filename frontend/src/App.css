@@ -25,6 +25,7 @@
   background: var(--navy);
   color: var(--ivory);
   padding: 16px 20px;
+  border-bottom: 2px solid var(--gold);
 }
 
 .logo {
@@ -40,12 +41,16 @@
   letter-spacing: -0.2px;
 }
 
+.logo-wordmark-light {
+  font-weight: 400;
+}
+
 .logo-wordmark-accent {
   color: var(--gold);
 }
 
 .tagline {
-  margin: 6px 0 0 42px;
+  margin: 6px 0 0 46px;
   font-size: 13px;
   color: rgba(248, 247, 243, 0.75);
 }
