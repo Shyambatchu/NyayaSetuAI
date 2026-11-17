@@ -32,6 +32,9 @@ ADMIN_EMAIL=
 ADMIN_INITIAL_PASSWORD=
 
 # LLM
+# Current decision (D-01, 2026-11-17): LLM_PROVIDER=gemini, LLM_MODEL=gemini-2.0-flash;
+# fallback is Groq via the openai_compatible interface (Groq has no provider value of its
+# own — it's reached through LLM_FALLBACK_BASE_URL).
 LLM_PROVIDER=
 LLM_MODEL=
 LLM_API_KEY=
@@ -39,6 +42,7 @@ LLM_BASE_URL=
 LLM_FALLBACK_PROVIDER=
 LLM_FALLBACK_MODEL=
 LLM_FALLBACK_API_KEY=
+LLM_FALLBACK_BASE_URL=
 LLM_DATA_POLICY=may_train
 LLM_ALLOW_USER_DOCUMENTS=false
 LLM_DAILY_TOKEN_LIMIT=500000

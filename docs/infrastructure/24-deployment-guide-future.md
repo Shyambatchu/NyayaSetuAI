@@ -1,14 +1,21 @@
 # 24 – Future Deployment Guide
 
-> **Future phase only.** Do not create cloud accounts or deploy anything in Phase 1. This document prepares architecture and decisions. Re-check every limit before acting, as free tiers change.
+> **Scope note, 2026-11-17:** this guide is about scaling *past* the hackathon — a real
+> multi-user SaaS deployment on managed PostgreSQL. It is not the hackathon submission's
+> deployment, which is needed *now* (the team page requires a deployed demo link) and is
+> much simpler: Render free tier running the backend directly against the SQLite file, no
+> separate managed database service at all. That plan is in
+> [29 §0](../hackathon/29-development-roadmap.md#0-deployment-is-a-day-1-task-not-a-week-4-task).
+> Everything below — Supabase, a database migration, paid tiers — is genuinely future work,
+> to revisit only if this continues past the hackathon.
 
-## 1. Candidate free-tier stack
+## 1. Candidate free-tier stack (for a future multi-user SaaS, not the hackathon demo)
 
 | Component | Candidate | Fit |
 |---|---|---|
 | Frontend | Cloudflare Pages | Good for a static build |
 | Backend | Render Free | Demo only |
-| Database, auth, storage | Supabase Free | Prototype only |
+| Database, auth, storage | Supabase Free | Only relevant if the SQLite file is later migrated to managed PostgreSQL ([22 §5](22-database-migrations.md#5-scaling-beyond-the-mvp)); the hackathon demo needs no database service at all |
 | Source | GitHub Free | Good |
 | Errors | Sentry Free | Scrub content before sending |
 
